@@ -268,3 +268,15 @@ int vtsend_fill_box(
     return 0;
 }
 
+/// Added line feed mode control
+int vtsend_set_lf_new_line_mode(vtsend_t *p, int mode_set) {
+  char buf[5];
+  buf[0] = ESC;
+  buf[1] = '[';
+  buf[2] = '2';
+  buf[3] = '0';
+  buf[4] = mode_set ? 'h' : 'l';
+  UART_WRITE(p, buf, sizeof(buf));
+  return 0;
+}
+

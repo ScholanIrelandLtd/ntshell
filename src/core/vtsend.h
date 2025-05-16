@@ -84,6 +84,9 @@ int vtsend_fill_box(
         vtsend_t *p,
         const int x1, const int y1, const int x2, const int y2);
 
+/// Added line feed mode control
+int vtsend_set_lf_new_line_mode(vtsend_t *p, int mode_set);
+
 #ifdef __cplusplus
 }
 #endif

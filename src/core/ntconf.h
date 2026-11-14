@@ -41,12 +41,20 @@
 /**
  * @brief Maximum length for the editor module.
  */
+#ifdef _DEBUG
+#define NTCONF_EDITOR_MAXLEN    (120)
+#else
 #define NTCONF_EDITOR_MAXLEN    (80)
+#endif
 
 /**
  * @brief Maximum depth for the history module.
  */
+#ifdef _DEBUG
 #define NTCONF_HISTORY_DEPTH    (8)
+#else
+#define NTCONF_HISTORY_DEPTH    (2)
+#endif
 
 #endif
 
